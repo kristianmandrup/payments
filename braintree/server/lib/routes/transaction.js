@@ -1,10 +1,12 @@
-// TODO: What is the Koa way for doing request params?
-app.get('/transaction/:amount', function (req, res) {
-  var amount = req.amount;
-  gateway.transaction.sale({
-    amount: amount,
-    paymentMethodNonce: nonceFromTheClient,
-  }, function (err, result) {
-    // TODO
+module.exports = function(app) {
+  app.router.get('/transaction/:amount', function (req, res) {
+    var amount = this.params.amount;
+    var nonceFromTheClient = '???'; // TODO: get from params!!!?
+    gateway.transaction.sale({
+      amount: amount,
+      paymentMethodNonce: nonceFromTheClient,
+    }, function (err, result) {
+      // TODO
+    });
   });
-});
+}

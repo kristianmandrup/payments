@@ -3,7 +3,7 @@ Payments
 
 > Simple koa static server for handling Braintree payments/transactions
 
-Include `config/credentials.js` file
+Include `config/credentials.js` file, something like:
 
 ```js
 module.exports = {
@@ -17,6 +17,12 @@ Start the server!
 
 `npm start`
 
-### client
+### Tests
+
+Use Mocha or Karma with Sinon and Chai ;)
+
+Use setup from: https://github.com/babel/generator-babel-boilerplate
+
+### Client app
 
 Use: https://github.com/babel/generator-babel-boilerplate to get going ;)

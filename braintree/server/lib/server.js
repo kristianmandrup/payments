@@ -7,12 +7,10 @@ var koa         = require( 'koa' );
 var logger      = require( 'koa-logger' );
 var serve       = require( 'koa-static' );
 var route       = require( 'koa-route' );
+var router      = require( 'koa-router' );
 var mount       = require( 'koa-mount' );
 
-var requiredir = require("requiredir")
-
-// TODO: enable routes!!!
-// var routes = requiredir("./routes");
+// var requiredir = require("requiredir")
 
 var app = koa();
 app.use( logger() );
@@ -26,6 +24,15 @@ var gateway = braintree.connect({
     publicKey:    credentials.publicKey,
     privateKey:   credentials.privateKey
 });
+
+var paymentsApp = {
+  router: router,
+  gateway: gateway
+};
+
+// TODO: enable routes!!!
+// requiredir ???
+var routes = ('./routes')(paymentsApp);
 
 // Custom 404
 app.use( function *(next) {
