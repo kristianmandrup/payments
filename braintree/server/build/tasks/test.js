@@ -1,6 +1,8 @@
-var gulp  = require('gulp'),
-    mocha = require('gulp-mocha'),
-    path  = require('path'),
+var gulp  = require('gulp');
+var mocha = require('gulp-mocha-co');
+var exit = require('gulp-exit');
+
+var path  = require('path'),
     fs    = require('fs');
 
 var TESTS_PATH = './test/';

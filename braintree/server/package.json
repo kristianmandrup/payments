@@ -4,8 +4,8 @@
   "description": "Payments gateway server",
   "main": "index.js",
   "scripts": {
-    "start": "./bin/start",
-    "test": "./node_modules/.bin/gulp test",
+    "start": "node --harmony index.js",
+    "test": "node --harmony `which gulp`",
     "unit": "./node_modules/.bin/gulp node-test"
   },
   "config": {
@@ -16,14 +16,18 @@
   "license": "WTFPL",
   "devDependencies": {
     "chai": "^3.2.0",
+    "co-supertest": "0.0.10",
     "gulp": "^3.6.2",
     "gulp-espower": "^0.7.1",
+    "gulp-exit": "0.0.2",
     "gulp-mocha": "^0.1.1",
+    "gulp-nodemon": "^2.0.3",
     "gulp-watch": "^0.6.5",
     "mocha": "^1.21.4",
     "power-assert": "^0.7.2",
     "require-dir": "^0.3.0",
-    "sinon": "^1.15.4"
+    "sinon": "^1.15.4",
+    "supertest": "^1.0.1"
   },
   "dependencies": {
     "braintree": "^1.27.0",

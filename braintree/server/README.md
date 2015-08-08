@@ -17,11 +17,15 @@ Start the server!
 
 `npm start`
 
+It starts in `index.js` then `lib/server.js`
+
 ### Tests
 
 Use Mocha or Karma with Sinon and Chai ;)
 
 Using a variation of setup as per: https://github.com/Kevnz/slush-test/ at least for now...
+
+Look at [basic-koa-api-gulp-supertest](http://russmatney.com/techsposure/basic-koa-api-gulp-supertest/)
 
 -	[Mocha](https://mochajs.org/)
 -	[Chai](http://chaijs.com/)
