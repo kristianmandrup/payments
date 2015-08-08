@@ -19,6 +19,10 @@ Start the server!
 
 It starts in `index.js` then `lib/server.js`
 
+### Koa examples
+
+Check out https://github.com/koajs/examples for a lot of good examples for common Koa use cases :)
+
 ### Tests
 
 Use Mocha or Karma with Sinon and Chai ;)
