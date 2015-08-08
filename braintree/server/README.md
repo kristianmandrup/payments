@@ -21,7 +21,13 @@ Start the server!
 
 Use Mocha or Karma with Sinon and Chai ;)
 
-Use setup from: https://github.com/babel/generator-babel-boilerplate
+Using a variation of setup as per: https://github.com/Kevnz/slush-test/ at least for now...
+
+-	[Mocha](https://mochajs.org/)
+-	[Chai](http://chaijs.com/)
+-	[SinonJs](http://sinonjs.org/)
+
+See `build/tasks/test.js` and `/test` folder.
 
 ### Client app
 

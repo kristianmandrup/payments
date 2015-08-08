@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "./bin/start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/gulp test",
+    "unit": "./node_modules/.bin/gulp node-test"
   },
   "config": {
     "port": 14320
@@ -13,6 +14,17 @@
   "author": "Kristian Mandrup",
   "repository": "git://github.com/Kristian Mandrup/payments.git",
   "license": "WTFPL",
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "gulp": "^3.6.2",
+    "gulp-espower": "^0.7.1",
+    "gulp-mocha": "^0.1.1",
+    "gulp-watch": "^0.6.5",
+    "mocha": "^1.21.4",
+    "power-assert": "^0.7.2",
+    "require-dir": "^0.3.0",
+    "sinon": "^1.15.4"
+  },
   "dependencies": {
     "braintree": "^1.27.0",
     "co-body": "^1.0.0",
@@ -22,7 +34,6 @@
     "koa-resource-router": "^0.4.0",
     "koa-route": "^2.4.0",
     "koa-router": "^5.1.2",
-    "koa-static": "^1.4.9",
-    "requiredir": "^1.0.7"
+    "koa-static": "^1.4.9"
   }
 }
