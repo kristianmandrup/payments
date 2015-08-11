@@ -4,6 +4,7 @@ module.exports = function(app) {
     var nonceFromTheClient = '???'; // TODO: get from params!!!?
     gateway.transaction.sale({
       amount: amount,
+      currency: 'USD',
       paymentMethodNonce: nonceFromTheClient,
     }, function (err, result) {
       // TODO
