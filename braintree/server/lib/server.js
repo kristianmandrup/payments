@@ -10,8 +10,6 @@ var route       = require( 'koa-route' );
 var Router      = require( 'koa-router' );
 var mount       = require( 'koa-mount' );
 
-// var requiredir = require("requiredir")
-
 var app = koa();
 app.use( logger() );
 
@@ -34,8 +32,6 @@ var paymentsApp = {
   gateway: gateway
 };
 
-// TODO: enable routes!!!
-// requiredir ???
 var routes = require('./routes')(paymentsApp);
 
 // Custom 404
