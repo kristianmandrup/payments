@@ -29,10 +29,26 @@ var router = new Router({
 
 var paymentsApp = {
   router: router,
-  gateway: gateway
+  gateway: gateway,
+  app: app
 };
 
-var routes = require('./routes')(paymentsApp);
+// The REAL braintree routes...
+// var routes = require('./routes')(paymentsApp);
+// app
+//   .use(router.routes())
+//   .use(router.allowedMethods());
+
+app.use(logger());
+
+// See https://github.com/russmatney/koa-gulp-crud
+// Dummy endpoints for testing
+var endpoint = require('./api/endpoint');
+
+// GET route
+app.use(route.get('/', endpoint.show));
+// POST route
+app.use(route.post('/', endpoint.create));
 
 // Custom 404
 app.use( function *(next) {
@@ -43,8 +59,8 @@ app.use( function *(next) {
     this.status = 404;
 });
 
-// Serve the frontend
+// Serve the frontend (such as public/index.html)
 app.use( serve( path.join( __dirname, '../public' ) ) );
 
 // Export composable app
-module.exports = app;
+module.exports = paymentsApp;

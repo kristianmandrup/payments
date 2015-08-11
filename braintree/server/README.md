@@ -3,6 +3,10 @@ Payments
 
 > Simple koa static server for handling Braintree payments/transactions
 
+### Setup and Configuration
+
+For Braintree communication to work, you must first add the correct Braintree credentials/keys. For security reasons these are not part of the repo.
+
 Include `config/credentials.js` file, something like:
 
 ```js
@@ -12,6 +16,8 @@ module.exports = {
   privateKey:   'b22668e3e4492269f3cac791aba25b3d'  
 }
 ```
+
+Note: These are fake key values. The real key values should be obtained elsewhere ;)
 
 [Koa Server overview](http://koajs.com/)
 
@@ -27,7 +33,7 @@ Check out https://github.com/koajs/examples for a lot of good examples for commo
 
 [Intro to Koa generators](http://code.tutsplus.com/tutorials/introduction-to-generators-koajs-part-2--cms-21756)
 
-Add Rate limit and logger:
+TODO: Add Rate limit and logger:
 
 ```js
 var logger = require('koa-logger');
@@ -38,7 +44,9 @@ app.use(limit({ duration: 1000*60*3 , // 3 min
 app.use(logger());
 ```
 
-Testing:
+### Testing
+
+Run `mocha`
 
 ```js
 var request = require('supertest');
@@ -77,6 +85,8 @@ Can be used to mount multiple payment gateway apps on the same Server instance w
 [Mount demos](https://github.com/marcusoftnet/mountDemos)
 
 ### Tests
+
+See https://github.com/russmatney/koa-gulp-crud
 
 Use Mocha or Karma with Sinon and Chai ;)
 

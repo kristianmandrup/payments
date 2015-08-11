@@ -1,0 +1,46 @@
+{
+  "name": "koa-mongo-gulp",
+  "version": "0.1.0",
+  "description": "Koa CRUD app using mongo, with live-reload and tests running per file save via gulp",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --harmony-generators `which gulp`",
+    "test": "node --harmony-generators `which gulp` test-once"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/russmatney/koa-gulp-crud.git"
+  },
+  "keywords": [
+    "koa",
+    "gulp",
+    "crud"
+  ],
+  "author": "Russell Matney",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/russmatney/koa-gulp-crud/issues"
+  },
+  "homepage": "https://github.com/russmatney/koa-gulp-crud",
+  "dependencies": {
+    "koa-cors": "0.0.13",
+    "koa-logger": "~1.2.2",
+    "co-body": "~1.0.0",
+    "koa-route": "~2.0.0",
+    "koa": "~0.9.0"
+  },
+  "devDependencies": {
+    "co": "~3.1.0",
+    "co-supertest": "0.0.7",
+    "gulp-exit": "0.0.2",
+    "chai": "~1.9.1",
+    "gulp-nodemon": "~1.0.4",
+    "gulp-mocha-co": "~0.4.1-co.3",
+    "gulp-watch": "~0.6.9",
+    "gulp": "~3.8.7",
+    "supertest": "~0.13.0"
+  },
+  "engines": {
+    "node": "v0.11.11"
+  }
+}
