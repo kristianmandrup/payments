@@ -17,6 +17,56 @@ var braintree = require("braintree-web");
 braintree.setup("CLIENT-TOKEN-FROM-SERVER", "INTEGRATION-TYPE", options);
 ```
 
+See [Paypal Merchant Account - developer](https://developer.paypal.com/docs/classic/admin/t)
+
+Includes integrated shopping cart
+
+See [Braintree node](https://github.com/braintree/braintree_node)
+
+[Paynode](http://blog.james-carr.org/2010/09/26/paynode-more-payflow-api-methods-braintree-integration/)
+
+[Paynode on github](https://github.com/jamescarr/paynode)
+
+-	Paypal Payflow Pro
+-	Authorize.net (AIM only)
+-	Braintree
+-	Chargify
+-	...
+
+[Paynode Docs](https://github.com/jamescarr/paynode/tree/master/docs)
+
+[Sale Transactions](https://developers.braintreepayments.com/ios+ruby/reference/request/transaction/sale)
+
+Node.js E-commerce
+
+-	https://github.com/EastpointSoftware/traider.io/ (33) - http://traider.io/
+-	https://github.com/reactioncommerce/reaction (833) - Meteor
+
+[Kraken Shoppingcart example](https://github.com/krakenjs/kraken-example-with-shoppingcart)
+
+```js
+var braintree = require("paynode").use("braintree");
+
+var gateway = braintree.connect({
+  environment: braintree.Environment.Sandbox,
+  merchantId: 'your_merchant_id',
+  publicKey: 'your_public_key',
+  privateKey: 'your_private_key'
+});
+
+gateway.transaction.sale({
+    'amount': '5.00',
+    'creditCard': {
+      'number': '5105105105105100',
+      'expirationDate': '05/12'
+    }
+  },
+  function (err, response) {
+    // ...
+  }
+);
+```
+
 See [Client Guide](https://developers.braintreepayments.com/javascript+node/start/hello-client)
 
 First request a client token from the server, via an Ajax GET request. F.ex use Axios or Superagent.
